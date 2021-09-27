@@ -1,0 +1,5 @@
+Application,arch_desc,maxiter,skip,oslimit
+edn,stdnoc_3x3tiles_4x4PEs.json,60,NO,0
+edn,stdnoc_3x3tiles_4x4PEs.json,60,NO,1
+edn,stdnoc_3x3tiles_3x3PEs_REGF8.json,60,NO,0
+edn,stdnoc_3x3tiles_3x3PEs_REGF8.json,60,NO,1
