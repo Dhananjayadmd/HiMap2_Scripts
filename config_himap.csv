@@ -1,4 +1,3 @@
-Application,N,init,C1,C2,r,c,arch_desc,maxiter,skip,oslimit
-edn,7,100,2,2,3,3,stdnoc_3x3tiles_4x4PEs.json,60,INTRA,0
-edn,10,100,2,2,3,3,stdnoc_3x3tiles_4x4PEs.json,60,INTRA,0
-edn,7,100,2,2,3,3,stdnoc_3x3tiles_3x3PEs_REGF8.json,60,INTRA,0
+Application,N,init,C1,C2,r,c,arch_desc,maxiter,initII,skip,oslimit,summarylog
+edn,9,100,2,2,3,3,stdnoc_3x3tiles_4x4PEs.json,60,0,INTRA,1,himap2_summary.txt
+edn,10,100,2,2,3,3,stdnoc_3x3tiles_4x4PEs.json,60,0,INTRA,1,himap2_summary.txt

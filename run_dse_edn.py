@@ -28,9 +28,9 @@ if False:
   entry_id = 0
   for i, j in himap2_config.iterrows():
       os.chdir(HIMAP2_HOME+'/HiMap2_Scripts')
-      print('python run_morpher_edn.py  %s %s %s %s %s %s %s %s %s %s %s &' % (j["N"],j["init"], j["C1"],j["C2"],j["r"],j["c"],j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],entry_id))
+      print('python run_morpher_edn.py  %s %s %s %s %s %s %s %s %s %s %s %s %s &' % (j["N"],j["init"], j["C1"],j["C2"],j["r"],j["c"],j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],entry_id,j["summarylog"], j["initII"]))
       if True:
-        os.system('python run_morpher_edn.py  %s %s %s %s %s %s %s %s %s %s %s &' % (j["N"],j["init"], j["C1"],j["C2"],j["r"],j["c"],j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],entry_id))
+        os.system('python run_morpher_edn.py  %s %s %s %s %s %s %s %s %s %s %s %s %s &' % (j["N"],j["init"], j["C1"],j["C2"],j["r"],j["c"],j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],entry_id, j["summarylog"], j["initII"]))
       entry_id = entry_id+1
 
 if True:
@@ -39,9 +39,9 @@ if True:
   entry_id = 0
   for i, j in himap2_legacy_config.iterrows():
       os.chdir(HIMAP2_HOME+'/HiMap2_Scripts')
-      print('python run_morpher_edn_legacy.py %s %s %s %s %s &' % (j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],entry_id))
+      print('python run_morpher_edn_legacy.py %s %s %s %s %s %s %s &' % (j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],entry_id, j["summarylog"], j["initII"]))
       if True:
-        os.system('python run_morpher_edn_legacy.py %s %s %s %s %s &' % (j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],entry_id))
+        os.system('python run_morpher_edn_legacy.py %s %s %s %s %s %s %s &' % (j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],entry_id, j["summarylog"], j["initII"]))
       entry_id = entry_id+1
 
 
