@@ -1,0 +1,36 @@
+
+**************************
+
+************Map failed: II max of 32 has been reached**************
+Entry ID:0, DFG:idctRows_INNERMOST_LN1_PartPred_DFG.xml, JSON:/home/dmdwi/Workplace/HiMap2/Morpher_CGRA_Mapper/json_arch/clustered_archs/stdnoc_3x3tiles_3x3PEs.json, max iterations:60, Skip inter or intra:NO, Open set limit: 0
+Res II:2
+Rec II:4
+Time measured:23.3334 s (0.0064815 h).
+
+**************************
+
+************Map failed: II max of 32 has been reached**************
+Entry ID:3, DFG:idctRows_INNERMOST_LN1_PartPred_DFG.xml, JSON:/home/dmdwi/Workplace/HiMap2/Morpher_CGRA_Mapper/json_arch/clustered_archs/stdnoc_3x3tiles_3x3PEs_REGF8.json, max iterations:60, Skip inter or intra:NO, Open set limit: 0
+Res II:2
+Rec II:4
+Time measured:34.1879 s (0.00949664 h).
+
+**************************
+
+***********Map Successful***************
+Entry ID:0, DFG:idctRows_INNERMOST_LN1_PartPred_DFG_removed_falselsdep.xml, JSON:/home/dmd/Workplace/HiMap2/Morpher_CGRA_Mapper/json_arch/clustered_archs/stdnoc_3x3tiles_3x3PEs.json, max iterations:60, Skip inter or intra:NO, Open set limit: 0
+Res II:2
+Rec II:4
+Mapped II:6
+Time measured:10363.9 s (2.87886 h).
+**************************
+
+**************************
+
+***********Map Successful***************
+Entry ID:0, DFG:idctRows_INNERMOST_LN1_PartPred_DFG_removed_falselsdep.xml, JSON:/home/dmd/Workplace/HiMap2/Morpher_CGRA_Mapper/json_arch/clustered_archs/stdnoc_3x3tiles_3x3PEs.json, max iterations:60, Skip inter or intra:NO, Open set limit: 0
+Res II:2
+Rec II:4
+Mapped II:8
+Time measured:7131.18 s (1.98088 h).
+**************************
