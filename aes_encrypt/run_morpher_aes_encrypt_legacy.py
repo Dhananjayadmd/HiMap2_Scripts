@@ -29,9 +29,9 @@ def main(arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summar
   dir_name = 'Legacy_Entry_%s_s_arch_%s_maxIter_%s_skip_%s_oslimit_%s/' % (entry_id, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
   sum_log_name = '_legacy_entry_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s' % (entry_id, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
 
-  DFG_GEN_KERNEL = DFG_GEN_HOME + '/applications/picojpeg/'
+  DFG_GEN_KERNEL = DFG_GEN_HOME + '/applications/aes/hycube_compilation/'
   #DFG_CLUSTRNG_KERNEL = DFG_CLUSTRNG_HOME + '/applications/edn/' + dir_name
-  MAPPER_KERNEL = MAPPER_HOME + '/applications/clustered_arch/picojpeg_idct_cols/'+ dir_name
+  MAPPER_KERNEL = MAPPER_HOME + '/applications/clustered_arch/aes_encrypt/'+ dir_name
   #EXECTIME_SUMMARY = HIMAP2_HOME + '/HiMap2_Scripts/exec_time/picojpeg/' 
   #SIMULATOR_KERNEL =SIMULATOR_HOME + '/applications/'
 
@@ -60,10 +60,9 @@ def main(arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summar
   os.chdir(DFG_GEN_KERNEL)
 
   print('\nGenerating DFG\n')
-  #os.system('./run_pass.sh idctCols')
-  os.system('dot -Tpdf idctCols_INNERMOST_LN1_PartPredDFG.dot -o idctCols_INNERMOST_LN1_PartPredDFG.pdf')
-  #os.system('cp jpegdct_POST_LN111_PartPred_DFG_forclustering.xml '+DFG_CLUSTRNG_KERNEL)
-  os.system('cp idctCols_INNERMOST_LN1_PartPred_DFG_removed_falselsdep.xml '+ MAPPER_KERNEL)
+  #os.system('./run_pass.sh encrypt')
+  os.system('dot -Tpdf encrypt_INNERMOST_LN1_PartPredDFG.dot -o encrypt_INNERMOST_LN1_PartPredDFG.pdf')
+  os.system('cp encrypt_INNERMOST_LN1_PartPred_DFG.xml '+ MAPPER_KERNEL)
 
 
 
@@ -77,7 +76,7 @@ def main(arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summar
   os.chdir(MAPPER_KERNEL)
   #start = time.time()
 
-  os.system(HIMAP2_HOME+'/Morpher_CGRA_Mapper/build_legacy/src/cgra_xml_mapper -m %s -d idctCols_INNERMOST_LN1_PartPred_DFG_removed_falselsdep.xml -j %s -s %s -l %s -u %s -a %s -i %s > log.txt &' % (maxIter,HIMAP2_HOME+'/Morpher_CGRA_Mapper/json_arch/clustered_archs/'+arch_desc, skip_inter_or_intra, open_set_limit,HIMAP2_HOME+'/HiMap2_Scripts/'+summary_log, entry_id,initII))
+  os.system(HIMAP2_HOME+'/Morpher_CGRA_Mapper/build_legacy/src/cgra_xml_mapper -m %s -d encrypt_INNERMOST_LN1_PartPred_DFG.xml -j %s -s %s -l %s -u %s -a %s -i %s > log.txt &' % (maxIter,HIMAP2_HOME+'/Morpher_CGRA_Mapper/json_arch/clustered_archs/'+arch_desc, skip_inter_or_intra, open_set_limit,HIMAP2_HOME+'/HiMap2_Scripts/'+summary_log, entry_id,initII))
   os.system('neato -Tpdf arch_allconnections.dot -o %s.pdf' % (arch_desc))
   os.system('neato -Tpdf arch_interclusterconnections.dot -o %s_interclusterconnections.pdf' % (arch_desc))
 

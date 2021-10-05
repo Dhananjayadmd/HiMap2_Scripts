@@ -29,9 +29,9 @@ def main(no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c
   dir_name = 'Entry_%s_Clusters_%s_Init_%s_C1_%s_C2_%s_r_%s_c_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s/' % (entry_id,no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
   sum_log_name = '_entry_%s_clusters_%s_Init_%s_C1_%s_C2_%s_r_%s_c_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s' % (entry_id,no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
 
-  DFG_GEN_KERNEL = DFG_GEN_HOME + '/applications/picojpeg/'
-  DFG_CLUSTRNG_KERNEL = DFG_CLUSTRNG_HOME + '/applications/picojpeg_idct_cols/' + dir_name
-  MAPPER_KERNEL = MAPPER_HOME + '/applications/clustered_arch/picojpeg_idct_cols/'+ dir_name
+  DFG_GEN_KERNEL = DFG_GEN_HOME + '/applications/aes/hycube_compilation/'
+  DFG_CLUSTRNG_KERNEL = DFG_CLUSTRNG_HOME + '/applications/aes_encrypt/' + dir_name
+  MAPPER_KERNEL = MAPPER_HOME + '/applications/clustered_arch/aes_encrypt/'+ dir_name
   #EXECTIME_SUMMARY = HIMAP2_HOME + '/HiMap2_Scripts/exec_time/edn/' 
   #SIMULATOR_KERNEL =SIMULATOR_HOME + '/applications/'
 
@@ -60,15 +60,15 @@ def main(no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c
   os.chdir(DFG_GEN_KERNEL)
 
   print('\nGenerating DFG\n')
-  #os.system('./run_pass.sh idctCols')
-  os.system('dot -Tpdf idctCols_INNERMOST_LN1_PartPredDFG.dot -o idctCols_INNERMOST_LN1_PartPredDFG.pdf')
-  os.system('cp idctCols_INNERMOST_LN1_PartPred_DFG_forclustering_removed_falselsdep.xml '+DFG_CLUSTRNG_KERNEL)
-  os.system('cp idctCols_INNERMOST_LN1_PartPred_DFG_removed_falselsdep.xml '+ MAPPER_KERNEL)
+  #os.system('./run_pass.sh encrypt')
+  os.system('dot -Tpdf encrypt_INNERMOST_LN1_PartPredDFG.dot -o encrypt_INNERMOST_LN1_PartPredDFG.pdf')
+  os.system('cp encrypt_INNERMOST_LN1_PartPred_DFG_forclustering.xml '+DFG_CLUSTRNG_KERNEL)
+  os.system('cp encrypt_INNERMOST_LN1_PartPred_DFG.xml '+ MAPPER_KERNEL)
 
   print('\nRunning DFG Clustering\n')
   os.chdir(DFG_CLUSTRNG_KERNEL)
-  os.system('python ../../../dfg_clustering.py idctCols_INNERMOST_LN1_PartPred_DFG_forclustering_removed_falselsdep.xml %s %s %s > log1.txt' % (no_clusters, ('precomputed'), no_init))
-  os.system('dot -Tpdf inter_cluster.dot -o inter_cluster_graph_idctCols_%s_%s.pdf' % (no_clusters, no_init))
+  os.system('python ../../../dfg_clustering.py encrypt_INNERMOST_LN1_PartPred_DFG_forclustering.xml %s %s %s > log1.txt' % (no_clusters, ('precomputed'), no_init))
+  os.system('dot -Tpdf inter_cluster.dot -o inter_cluster_graph_aes_encrypt_%s_%s.pdf' % (no_clusters, no_init))
   os.system('cp clustered.png clustered_%s_%s.png' % (no_clusters, no_init))
 	
   os.system('cp clustering_outcome.txt '+ MAPPER_KERNEL)
@@ -87,7 +87,7 @@ def main(no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c
   os.chdir(MAPPER_KERNEL)
   start = time.time()
 
-  os.system(HIMAP2_HOME+'/Morpher_CGRA_Mapper/build_hierarchical/src/cgra_xml_mapper -m %s -d idctCols_INNERMOST_LN1_PartPred_DFG_removed_falselsdep.xml -j %s -s %s -l %s -u %s -a %s -i %s > log.txt &' % (maxIter,HIMAP2_HOME+'/Morpher_CGRA_Mapper/json_arch/clustered_archs/'+arch_desc, skip_inter_or_intra, open_set_limit,HIMAP2_HOME+'/HiMap2_Scripts/'+summary_log, entry_id, initII))
+  os.system(HIMAP2_HOME+'/Morpher_CGRA_Mapper/build_hierarchical/src/cgra_xml_mapper -m %s -d encrypt_INNERMOST_LN1_PartPred_DFG.xml -j %s -s %s -l %s -u %s -a %s -i %s > log.txt &' % (maxIter,HIMAP2_HOME+'/Morpher_CGRA_Mapper/json_arch/clustered_archs/'+arch_desc, skip_inter_or_intra, open_set_limit,HIMAP2_HOME+'/HiMap2_Scripts/'+summary_log, entry_id, initII))
   os.system('neato -Tpdf arch_allconnections.dot -o %s.pdf' % (arch_desc))
   os.system('neato -Tpdf arch_interclusterconnections.dot -o %s_interclusterconnections.pdf' % (arch_desc))
 
