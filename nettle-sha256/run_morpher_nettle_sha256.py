@@ -67,7 +67,7 @@ def main(no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c
 
   print('\nRunning DFG Clustering\n')
   os.chdir(DFG_CLUSTRNG_KERNEL)
-  os.system('python ../../../dfg_clustering.py _nettle_sha256_compress_INNERMOST_LN1_PartPred_DFG_forclustering.xml %s %s %s > log1.txt' % (no_clusters, ('precomputed'), no_init))
+  os.system('python ../../../dfg_clustering.py _nettle_sha256_compress_INNERMOST_LN1_PartPred_DFG_forclustering.xml %s %s %s %s > log1.txt' % (no_clusters, ('precomputed'), no_init, cgra_cluster_r))
   os.system('dot -Tpdf inter_cluster.dot -o inter_cluster_graph_nettle_sha256_%s_%s.pdf' % (no_clusters, no_init))
   os.system('cp clustered.png clustered_%s_%s.png' % (no_clusters, no_init))
 	
