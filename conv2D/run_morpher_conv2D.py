@@ -4,6 +4,7 @@ import os
 import os.path
 import shutil
 import time 
+from datetime 
 ############################################
 # Directory Structure:
 # Morpher Home:
@@ -25,9 +26,9 @@ def main(no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c
   DFG_CLUSTRNG_HOME = HIMAP2_HOME + '/HiMap2_Cluster_Mapping'
   MAPPER_HOME = HIMAP2_HOME + '/Morpher_CGRA_Mapper'
   #SIMULATOR_HOME = HIMAP2_HOME + '/hycube_simulator'
-
-  dir_name = 'Entry_%s_Clusters_%s_Init_%s_C1_%s_C2_%s_r_%s_c_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s/' % (entry_id,no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
-  sum_log_name = '_entry_%s_clusters_%s_Init_%s_C1_%s_C2_%s_r_%s_c_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s' % (entry_id,no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
+  today = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+  dir_name = 'Entry_%s_Datetime_%s_Clusters_%s_Init_%s_C1_%s_C2_%s_r_%s_c_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s/' % (entry_id,today,no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
+  sum_log_name = '_entry_%s_Datetime_%s_clusters_%s_Init_%s_C1_%s_C2_%s_r_%s_c_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s' % (entry_id,today,no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
 
   DFG_GEN_KERNEL = DFG_GEN_HOME + '/applications/conv2D/'
   DFG_CLUSTRNG_KERNEL = DFG_CLUSTRNG_HOME + '/applications/conv2D/' + dir_name

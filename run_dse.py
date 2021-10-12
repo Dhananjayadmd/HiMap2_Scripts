@@ -23,7 +23,8 @@ legacy_config_entry_id_list = [0,1,2,3,4,5,6]
 print(himap2_config)
 print(himap2_legacy_config)
 
-HIMAP2_HOME = '/home/dmd/Workplace/HiMap2'	
+HIMAP2_HOME = '/home/dmd/Workplace/HiMap2'
+print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))	
 
 if True:
   # ## Run design space exploration

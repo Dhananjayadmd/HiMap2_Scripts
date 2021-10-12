@@ -3,7 +3,8 @@ import sys
 import os
 import os.path
 import shutil
-import time 
+import time
+from datetime  
 ############################################
 # Directory Structure:
 # Morpher Home:
@@ -26,8 +27,9 @@ def main(arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summar
   MAPPER_HOME = HIMAP2_HOME + '/Morpher_CGRA_Mapper'
   #SIMULATOR_HOME = HIMAP2_HOME + '/hycube_simulator'
 
-  dir_name = 'Legacy_Entry_%s_s_arch_%s_maxIter_%s_skip_%s_oslimit_%s/' % (entry_id, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
-  sum_log_name = '_legacy_entry_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s' % (entry_id, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
+  today = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+  dir_name = 'Legacy_Entry_%s_Datetime_%s_s_arch_%s_maxIter_%s_skip_%s_oslimit_%s/' % (entry_id,today, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
+  sum_log_name = '_legacy_entry_%s_Datetime_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s' % (entry_id,today, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
 
   DFG_GEN_KERNEL = DFG_GEN_HOME + '/applications/cordic/'
   #DFG_CLUSTRNG_KERNEL = DFG_CLUSTRNG_HOME + '/applications/edn/' + dir_name
