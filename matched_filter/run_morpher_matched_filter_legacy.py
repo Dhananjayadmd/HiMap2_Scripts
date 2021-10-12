@@ -26,8 +26,8 @@ def main(arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summar
   DFG_CLUSTRNG_HOME = HIMAP2_HOME + '/HiMap2_Scikit_Clustering'
   MAPPER_HOME = HIMAP2_HOME + '/Morpher_CGRA_Mapper'
   #SIMULATOR_HOME = HIMAP2_HOME + '/hycube_simulator'
-
-  today = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+  
+  today = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M")
   dir_name = 'Legacy_Entry_%s_Datetime_%s_s_arch_%s_maxIter_%s_skip_%s_oslimit_%s/' % (entry_id,today, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
   sum_log_name = '_legacy_entry_%s_Datetime_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s' % (entry_id,today, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
 
