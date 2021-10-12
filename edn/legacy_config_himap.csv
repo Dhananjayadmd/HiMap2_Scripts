@@ -1,0 +1,5 @@
+Application,arch_desc,maxiter,initII,skip,oslimit,summarylog
+edn,stdnoc_3x3tiles_4x4PEs.json,60,0,NO,0,legacy_summary.txt
+edn,stdnoc_3x3tiles_4x4PEs.json,60,0,NO,1,legacy_summary.txt
+edn,stdnoc_3x3tiles_3x3PEs_REGF8.json,60,0,NO,0,legacy_summary.txt
+edn,stdnoc_3x3tiles_3x3PEs_REGF8.json,60,0,NO,1,legacy_summary.txt

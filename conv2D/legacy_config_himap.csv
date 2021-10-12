@@ -1,0 +1,5 @@
+Application,arch_desc,maxiter,initII,skip,oslimit,summarylog
+conv2D,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,conv2D/legacy_summary.txt
+conv2D,stdnoc_3x3tiles_4x4PEs.json,60,0,NO,0,conv2D/legacy_summary.txt
+conv2D,stdnoc_3x3tiles_4x4PEs_v2.json,60,0,NO,0,conv2D/legacy_summary.txt
+conv2D,stdnoc_2x2tiles_2x2PEs.json,60,0,NO,0,conv2D/legacy_summary.txt

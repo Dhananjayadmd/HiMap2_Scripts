@@ -1,3 +1,0 @@
-Application,N,init,C1,C2,r,c,arch_desc,maxiter,initII,skip,oslimit,summarylog
-edn,9,100,2,2,3,3,stdnoc_3x3tiles_4x4PEs.json,60,0,INTRA,1,himap2_summary.txt
-edn,10,100,2,2,3,3,stdnoc_3x3tiles_4x4PEs.json,60,0,INTRA,1,himap2_summary.txt

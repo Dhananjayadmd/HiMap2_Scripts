@@ -1,0 +1,11 @@
+Entry_ID,Application,N,init,C1,C2,r,c,arch_desc,maxiter,initII,skip,oslimit,summarylog,Result,II,Iteration,Time
+0,edn,10,100,2,2,3,3,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,himap2_results.csv,,,,
+1,aes_encrypt,10,100,3,3,3,3,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,himap2_results.csv,,,,
+2,idctCols,10,100,3,3,3,3,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,himap2_results.csv,,,,
+3,idctRows,10,100,2,2,3,3,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,himap2_results.csv,,,,
+4,conv2D,10,100,2,2,3,3,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,himap2_results.csv,,,,
+5,matched_filter,10,100,2,2,3,3,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,himap2_results.csv,,,,
+6,matrix_multiply,10,100,2,2,3,3,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,himap2_results.csv,,,,
+7,cordic,10,100,2,2,3,3,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,himap2_results.csv,,,,
+8,kmeans,10,100,2,2,3,3,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,himap2_results.csv,,,,
+9,fir,10,100,2,2,3,3,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,himap2_results.csv,,,,

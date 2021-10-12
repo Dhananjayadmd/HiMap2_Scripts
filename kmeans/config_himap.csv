@@ -1,0 +1,2 @@
+Application,N,init,C1,C2,r,c,arch_desc,maxiter,initII,skip,oslimit,summarylog
+kmeans,10,100,2,2,3,3,stdnoc_3x3tiles_3x3PEs.json,60,5,NO,0,kmeans/himap2_summary.txt

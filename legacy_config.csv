@@ -1,0 +1,11 @@
+Entry_ID,Application,arch_desc,maxiter,initII,skip,oslimit,summarylog
+0,edn,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,legacy_results.csv
+1,aes_encrypt,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,legacy_results.csv
+2,idctCols,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,legacy_results.csv
+3,idctRows,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,legacy_results.csv
+4,conv2D,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,legacy_results.csv
+5,matched_filter,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,legacy_results.csv
+6,matrix_multiply,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,legacy_results.csv
+7,cordic,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,legacy_results.csv
+8,kmeans,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,legacy_results.csv
+9,fir,stdnoc_3x3tiles_3x3PEs.json,60,0,NO,0,legacy_results.csv
