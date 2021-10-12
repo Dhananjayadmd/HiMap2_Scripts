@@ -62,7 +62,7 @@ def main(no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c
 
   print('\nGenerating DFG\n')
   #os.system('./run_pass.sh convolution2d')
-  os.system('dot -Tpdf convolution2d_INNERMOST_LN11_PartPredDFG.dot -o convolution2d_INNERMOST_LN11_PartPredDFG.pdf')
+  os.system('dot -Tpdf convolution2d_INNERMOST_LN1_PartPredDFG.dot -o convolution2d_INNERMOST_LN1_PartPredDFG.pdf')
   os.system('cp convolution2d_INNERMOST_LN1_PartPred_DFG_forclustering.xml '+DFG_CLUSTRNG_KERNEL)
   os.system('cp convolution2d_INNERMOST_LN1_PartPred_DFG.xml '+ MAPPER_KERNEL)
 
