@@ -24,7 +24,7 @@ print(himap2_config)
 print(himap2_legacy_config)
 
 HIMAP2_HOME = '/home/dmd/Workplace/HiMap2'
-print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))	
+#print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))	
 
 if True:
   # ## Run design space exploration
@@ -51,4 +51,4 @@ if True:
     	os.chdir(HIMAP2_HOME+'/HiMap2_Scripts/'+j["Application"])
     	print('python run_morpher_%s_legacy.py %s %s %s %s %s %s %s &' % (j["Application"],j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],j["Entry_ID"], j["summarylog"], j["initII"]))
     #if True:
-    	os.system('python run_morpher_%s_legacy.py %s %s %s %s %s %s %s &' % (j["Application"],j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],j["Entry_ID"], j["summarylog"], j["initII"])
+    	os.system('python run_morpher_%s_legacy.py %s %s %s %s %s %s %s &' % (j["Application"],j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],j["Entry_ID"], j["summarylog"], j["initII"]))
