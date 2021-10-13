@@ -79,7 +79,7 @@ def main(arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summar
   os.chdir(MAPPER_KERNEL)
   #start = time.time()
 
-  os.system(HIMAP2_HOME+'/Morpher_CGRA_Mapper/build_legacy/src/cgra_xml_mapper -m %s -d _nettle_sha256_compress_INNERMOST_LN1_PartPred_DFG.xml -j %s -s %s -l %s -u %s -a %s -i %s > log.txt &' % (maxIter,HIMAP2_HOME+'/Morpher_CGRA_Mapper/json_arch/clustered_archs/'+arch_desc, skip_inter_or_intra, open_set_limit,HIMAP2_HOME+'/HiMap2_Scripts/'+summary_log, entry_id,initII))
+  os.system(HIMAP2_HOME+'/Morpher_CGRA_Mapper/build_legacy/src/cgra_xml_mapper -m %s -d _nettle_sha256_compress_INNERMOST_LN1_PartPred_DFG.xml -j %s -s %s -l %s -u %s -a %s -i %s -v %s > log.txt &' % (maxIter,HIMAP2_HOME+'/Morpher_CGRA_Mapper/json_arch/clustered_archs/'+arch_desc, skip_inter_or_intra, open_set_limit,HIMAP2_HOME+'/HiMap2_Scripts/'+summary_log, entry_id,initII, HIMAP2_HOME+'/HiMap2_Scripts/Logs/legacy_nettlesha.log'))
   os.system('neato -Tpdf arch_allconnections.dot -o %s.pdf' % (arch_desc))
   os.system('neato -Tpdf arch_interclusterconnections.dot -o %s_interclusterconnections.pdf' % (arch_desc))
 
