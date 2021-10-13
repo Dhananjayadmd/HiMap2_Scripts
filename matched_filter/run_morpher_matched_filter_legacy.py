@@ -65,7 +65,7 @@ def main(arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summar
   #os.system('./run_pass.sh corrFilter_1')
   #os.system('dot -Tpdf idctRows_INNERMOST_LN1_PartPredDFG.dot -o idctRows_INNERMOST_LN1_PartPredDFG.pdf')
   #os.system('cp jpegdct_POST_LN111_PartPred_DFG_forclustering.xml '+DFG_CLUSTRNG_KERNEL)
-  os.system('cp corrFilter_1_INNERMOST_LN11_PartPred_DFG.xml '+ MAPPER_KERNEL)
+  os.system('cp corrFilter_1_INNERMOST_LN1_PartPred_DFG.xml '+ MAPPER_KERNEL)
 
 
 
@@ -79,7 +79,7 @@ def main(arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summar
   os.chdir(MAPPER_KERNEL)
   #start = time.time()
 
-  os.system(HIMAP2_HOME+'/Morpher_CGRA_Mapper/build_legacy/src/cgra_xml_mapper -m %s -d corrFilter_1_INNERMOST_LN11_PartPred_DFG.xml -j %s -s %s -l %s -u %s -a %s -i %s > log.txt &' % (maxIter,HIMAP2_HOME+'/Morpher_CGRA_Mapper/json_arch/clustered_archs/'+arch_desc, skip_inter_or_intra, open_set_limit,HIMAP2_HOME+'/HiMap2_Scripts/'+summary_log, entry_id,initII))
+  os.system(HIMAP2_HOME+'/Morpher_CGRA_Mapper/build_legacy/src/cgra_xml_mapper -m %s -d corrFilter_1_INNERMOST_LN1_PartPred_DFG.xml -j %s -s %s -l %s -u %s -a %s -i %s > log.txt &' % (maxIter,HIMAP2_HOME+'/Morpher_CGRA_Mapper/json_arch/clustered_archs/'+arch_desc, skip_inter_or_intra, open_set_limit,HIMAP2_HOME+'/HiMap2_Scripts/'+summary_log, entry_id,initII))
   #os.system('neato -Tpdf arch_allconnections.dot -o %s.pdf' % (arch_desc))
   #os.system('neato -Tpdf arch_interclusterconnections.dot -o %s_interclusterconnections.pdf' % (arch_desc))
 
