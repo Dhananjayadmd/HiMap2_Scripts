@@ -26,8 +26,8 @@ def main(no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c
   MAPPER_HOME = HIMAP2_HOME + '/Morpher_CGRA_Mapper'
   #SIMULATOR_HOME = HIMAP2_HOME + '/hycube_simulator'
 
-  dir_name = 'Entry_%s_Clusters_%s_Init_%s_C1_%s_C2_%s_r_%s_c_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s/' % (entry_id,no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
-  sum_log_name = '_entry_%s_clusters_%s_Init_%s_C1_%s_C2_%s_r_%s_c_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s' % (entry_id,no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
+  dir_name = 'Entry_%s/' % (entry_id,no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
+  #sum_log_name = '_entry_%s_clusters_%s_Init_%s_C1_%s_C2_%s_r_%s_c_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s' % (entry_id,no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
 
   DFG_GEN_KERNEL = DFG_GEN_HOME + '/applications/edn/'
   DFG_CLUSTRNG_KERNEL = DFG_CLUSTRNG_HOME + '/applications/edn/' + dir_name
@@ -44,13 +44,13 @@ def main(no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c
   #print('Changing directory to %s' % dfg_path)
   #if not os.path.isdir(dfg_path):
   #	os.makedirs(dfg_path)
-  sum_file_name = EXECTIME_SUMMARY+'summary'+sum_log_name+'.log'
+  #sum_file_name = EXECTIME_SUMMARY+'summary'+#sum_log_name+'.log'
    
      
   
-  f=open(sum_file_name, "a+")
-  f.write("\n**********************************\n")
-  f.write("Clustering: \n Number of Clusters: %s\n Init: %s\n C1: %s\n C2: %s\n CGRA r: %s\n CGRA c: %s \n\nCGRA Mapping: \n Architecture: %s\n MaxIter: %s\n Skip Intra or inter %s\n Open set limit: %s" % (no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c, arch_desc, maxIter,skip_inter_or_intra, open_set_limit))
+  #f=open(sum_file_name, "a+")
+  #f.write("\n**********************************\n")
+  #f.write("Clustering: \n Number of Clusters: %s\n Init: %s\n C1: %s\n C2: %s\n CGRA r: %s\n CGRA c: %s \n\nCGRA Mapping: \n Architecture: %s\n MaxIter: %s\n Skip Intra or inter %s\n Open set limit: %s" % (no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c, arch_desc, maxIter,skip_inter_or_intra, open_set_limit))
 
 
 
@@ -93,8 +93,8 @@ def main(no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c
 
   end = time.time() 
 
-  f.write("\n\nExecution time: %s"% (end - start))   
-  f.close() 
+  #f.write("\n\nExecution time: %s"% (end - start))   
+  #f.close() 
 
 
 def my_mkdir(dir):

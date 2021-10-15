@@ -28,8 +28,8 @@ def main(no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c
   #SIMULATOR_HOME = HIMAP2_HOME + '/hycube_simulator'
   
   today = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M")
-  dir_name = 'Entry_%s_Datetime_%s_Clusters_%s_Init_%s_C1_%s_C2_%s_r_%s_c_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s/' % (entry_id,today,no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
-  sum_log_name = '_entry_%s_Datetime_%s_clusters_%s_Init_%s_C1_%s_C2_%s_r_%s_c_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s' % (entry_id,today,no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
+  dir_name = 'Entry_%s_Datetime_%s/' % (entry_id,today)
+  #sum_log_name = '_entry_%s_Datetime_%s_clusters_%s_Init_%s_C1_%s_C2_%s_r_%s_c_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s' % (entry_id,today)
 
   DFG_GEN_KERNEL = DFG_GEN_HOME + '/applications/kmeans/'
   DFG_CLUSTRNG_KERNEL = DFG_CLUSTRNG_HOME + '/applications/kmeans/' + dir_name
@@ -46,7 +46,7 @@ def main(no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c
   #print('Changing directory to %s' % dfg_path)
   #if not os.path.isdir(dfg_path):
   #	os.makedirs(dfg_path)
-  #sum_file_name = EXECTIME_SUMMARY+'summary'+sum_log_name+'.log'
+  #sum_file_name = EXECTIME_SUMMARY+'summary'+#sum_log_name+'.log'
    
      
   

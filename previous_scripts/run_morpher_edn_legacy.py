@@ -26,8 +26,8 @@ def main(arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summar
   MAPPER_HOME = HIMAP2_HOME + '/Morpher_CGRA_Mapper'
   #SIMULATOR_HOME = HIMAP2_HOME + '/hycube_simulator'
 
-  dir_name = 'Legacy_Entry_%s_s_arch_%s_maxIter_%s_skip_%s_oslimit_%s/' % (entry_id, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
-  sum_log_name = '_legacy_entry_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s' % (entry_id, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
+  dir_name = 'Legacy_Entry_%s/' % (entry_id, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
+  #sum_log_name = '_legacy_entry_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s' % (entry_id, arch_desc, maxIter,skip_inter_or_intra, open_set_limit)
 
   DFG_GEN_KERNEL = DFG_GEN_HOME + '/applications/edn/'
   #DFG_CLUSTRNG_KERNEL = DFG_CLUSTRNG_HOME + '/applications/edn/' + dir_name
@@ -44,13 +44,13 @@ def main(arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summar
   #print('Changing directory to %s' % dfg_path)
   #if not os.path.isdir(dfg_path):
   #	os.makedirs(dfg_path)
-  sum_file_name = EXECTIME_SUMMARY+'summary'+sum_log_name+'.log'
+  #sum_file_name = EXECTIME_SUMMARY+'summary'+#sum_log_name+'.log'
    
      
   
-  f=open(sum_file_name, "a+")
-  f.write("\n**********************************\n")
-  f.write("CGRA Mapping: \n Architecture: %s\n MaxIter: %s\n Skip Intra or inter %s\n Open set limit: %s" % (arch_desc, maxIter,skip_inter_or_intra, open_set_limit))
+  #f=open(sum_file_name, "a+")
+  #f.write("\n**********************************\n")
+  #f.write("CGRA Mapping: \n Architecture: %s\n MaxIter: %s\n Skip Intra or inter %s\n Open set limit: %s" % (arch_desc, maxIter,skip_inter_or_intra, open_set_limit))
 
 
 
@@ -83,8 +83,8 @@ def main(arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summar
 
   end = time.time() 
 
-  f.write("\n\nExecution time: %s"% (end - start))   
-  f.close() 
+  #f.write("\n\nExecution time: %s"% (end - start))   
+  #f.close() 
 
 
 def my_mkdir(dir):
