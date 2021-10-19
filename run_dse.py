@@ -15,10 +15,10 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 
-himap2_config = pd.read_csv("himap2_config.csv")
-himap2_legacy_config = pd.read_csv("legacy_config.csv")
-himap2_config_entry_id_list = [0,1,2,3,4,5,6]
-legacy_config_entry_id_list = [0,1,2,3,4,5,6]
+himap2_config = pd.read_csv("himap2_config_v2.csv")
+himap2_legacy_config = pd.read_csv("legacy_config_v2.csv")
+himap2_config_entry_id_list = []
+legacy_config_entry_id_list = []
 
 print(himap2_config)
 print(himap2_legacy_config)
