@@ -36,9 +36,9 @@ if True:
       if j["Entry_ID"] in himap2_config_entry_id_list:	  
       	os.chdir(HIMAP2_HOME+'/HiMap2_Scripts/'+j["Application"])
       	#os.system('pwd')
-      	print('python run_morpher_%s.py  %s %s %s %s %s %s %s %s %s %s %s %s %s %s&' % (j["Application"],j["N"],j["init"], j["C1"],j["C2"],j["r"],j["c"],j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],j["Entry_ID"],j["summarylog"], j["initII"], j["maxIterTime"]))
+      	print('python run_morpher_%s.py  %s %s %s %s %s %s %s %s %s %s %s %s %s %s &' % (j["Application"],j["N"],j["init"], j["C1"],j["C2"],j["r"],j["c"],j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],j["Entry_ID"],j["summarylog"], j["initII"], j["maxIterTime"]))
       #if True:
-      	os.system('python run_morpher_%s.py  %s %s %s %s %s %s %s %s %s %s %s %s %s %s&' % (j["Application"],j["N"],j["init"], j["C1"],j["C2"],j["r"],j["c"],j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],j["Entry_ID"], j["summarylog"], j["initII"], j["maxIterTime"]))
+      	os.system('python run_morpher_%s.py  %s %s %s %s %s %s %s %s %s %s %s %s %s %s &' % (j["Application"],j["N"],j["init"], j["C1"],j["C2"],j["r"],j["c"],j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],j["Entry_ID"], j["summarylog"], j["initII"], j["maxIterTime"]))
   
 
 if True:
