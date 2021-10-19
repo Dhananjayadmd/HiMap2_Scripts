@@ -15,7 +15,7 @@ import datetime
 
 # Build all three tools before running this script
 
-def main(no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c, arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summary_log,initII):
+def main(no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c, arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summary_log,initII,maxIterTime):
 
   HIMAP2_HOME = '/home/dmd/Workplace/HiMap2'	
   #if not 'HIMAP2_HOME' in os.environ:
@@ -89,7 +89,7 @@ def main(no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c
   os.chdir(MAPPER_KERNEL)
   start = time.time()
 
-  os.system(HIMAP2_HOME+'/Morpher_CGRA_Mapper/build_hierarchical/src/cgra_xml_mapper -m %s -d fir_filter_INNERMOST_LN11_PartPred_DFG.xml -j %s -s %s -l %s -u %s -a %s -i %s -v %s > log.txt &' % (maxIter,HIMAP2_HOME+'/Morpher_CGRA_Mapper/json_arch/clustered_archs/'+arch_desc, skip_inter_or_intra, open_set_limit,HIMAP2_HOME+'/HiMap2_Scripts/'+summary_log, entry_id, initII, HIMAP2_HOME+'/HiMap2_Scripts/Logs/himap2_fir.log'))
+  os.system(HIMAP2_HOME+'/Morpher_CGRA_Mapper/build_hierarchical/src/cgra_xml_mapper -m %s -d fir_filter_INNERMOST_LN11_PartPred_DFG.xml -j %s -s %s -l %s -u %s -a %s -i %s -w %s -v %s > log.txt &' % (maxIter,HIMAP2_HOME+'/Morpher_CGRA_Mapper/json_arch/clustered_archs/'+arch_desc, skip_inter_or_intra, open_set_limit,HIMAP2_HOME+'/HiMap2_Scripts/'+summary_log, entry_id, initII, maxIterTime, HIMAP2_HOME+'/HiMap2_Scripts/Logs/himap2_fir.log'))
   os.system('neato -Tpdf arch_allconnections.dot -o %s.pdf' % (arch_desc))
   os.system('neato -Tpdf arch_interclusterconnections.dot -o %s_interclusterconnections.pdf' % (arch_desc))
 
@@ -119,4 +119,5 @@ if __name__ == '__main__':
     entry_id = sys.argv[11]
     summary_log = sys.argv[12]
     initII = sys.argv[13]
-    main(no_clusters, no_init,C1_init, C2_init,cgra_cluster_r, cgra_cluster_c,arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summary_log, initII)
+    maxIterTime = sys.argv[14]
+    main(no_clusters, no_init,C1_init, C2_init,cgra_cluster_r, cgra_cluster_c,arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summary_log, initII,maxIterTime)
