@@ -28,6 +28,6 @@ Entry_ID,Application,N,init,C1,C2,r,c,arch_desc,maxiter,initII,skip,oslimit,summ
 1063,matched_filter,8,100,3,3,3,3,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Himap2_3333841_results.csv,6
 1064,matched_filter,10,100,3,3,3,3,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Himap2_3333841_results.csv,6
 1101,fir,6,100,3,3,3,3,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Himap2_3333841_results.csv,6
-1101,fir,7,100,3,3,3,3,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Himap2_3333841_results.csv,6
-1101,fir,8,100,3,3,3,3,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Himap2_3333841_results.csv,6
-1101,fir,10,100,3,3,3,3,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Himap2_3333841_results.csv,6
+1102,fir,7,100,3,3,3,3,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Himap2_3333841_results.csv,6
+1103,fir,8,100,3,3,3,3,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Himap2_3333841_results.csv,6
+1104,fir,10,100,3,3,3,3,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Himap2_3333841_results.csv,6
