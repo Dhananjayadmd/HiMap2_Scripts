@@ -23,7 +23,7 @@ def main(arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summar
 
   #HIMAP2_HOME = os.getenv('HIMAP2_HOME')
   DFG_GEN_HOME = HIMAP2_HOME + '/Morpher_DFG_Generator'
-  DFG_CLUSTRNG_HOME = HIMAP2_HOME + '/HiMap2_Scikit_Clustering'
+  DFG_CLUSTRNG_HOME = HIMAP2_HOME + '/HiMap2_Cluster_Mapping'
   MAPPER_HOME = HIMAP2_HOME + '/Morpher_CGRA_Mapper'
   #SIMULATOR_HOME = HIMAP2_HOME + '/hycube_simulator'
   
