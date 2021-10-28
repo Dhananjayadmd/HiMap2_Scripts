@@ -19,6 +19,8 @@ himap2_config = pd.read_csv("himap2_config_v2.csv")
 himap2_legacy_config = pd.read_csv("legacy_config_v2.csv")
 himap2_config_entry_id_list = []
 legacy_config_entry_id_list = []
+spr_himap2_config_entry_id_list = []
+spr_legacy_config_entry_id_list = []
 
 print(himap2_config)
 print(himap2_legacy_config)
@@ -52,3 +54,31 @@ if True:
     	print('python run_morpher_%s_legacy.py %s %s %s %s %s %s %s %s &' % (j["Application"],j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],j["Entry_ID"], j["summarylog"], j["initII"], j["maxIterTime"]))
     #if True:
     	os.system('python run_morpher_%s_legacy.py %s %s %s %s %s %s %s %s &' % (j["Application"],j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],j["Entry_ID"], j["summarylog"], j["initII"], j["maxIterTime"]))
+
+
+if True:
+  # ## Run design space exploration
+  print("Running HiMap2-SPR Compiler")
+  entry_id = 0
+  for i, j in himap2_config.iterrows():
+      #print('i: %s' % i)
+      #print('j: %s' %j)
+      if j["Entry_ID"] in spr_himap2_config_entry_id_list:    
+        os.chdir(HIMAP2_HOME+'/HiMap2_Scripts/'+j["Application"])
+        #os.system('pwd')
+        print('python run_spr_%s.py  %s %s %s %s %s %s %s %s %s %s %s %s %s %s &' % (j["Application"],j["N"],j["init"], j["C1"],j["C2"],j["r"],j["c"],j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],j["Entry_ID"],j["summarylog"], j["initII"], j["maxIterTime"]))
+      #if True:
+        os.system('python run_spr_%s.py  %s %s %s %s %s %s %s %s %s %s %s %s %s %s &' % (j["Application"],j["N"],j["init"], j["C1"],j["C2"],j["r"],j["c"],j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],j["Entry_ID"], j["summarylog"], j["initII"], j["maxIterTime"]))
+  
+
+if True:
+  # ## Run design space exploration
+  print("Running Legacy-SPR Compiler")
+  #entry_id = 0
+  for i, j in himap2_legacy_config.iterrows():
+    #pass
+    if j["Entry_ID"] in spr_legacy_config_entry_id_list:   
+      os.chdir(HIMAP2_HOME+'/HiMap2_Scripts/'+j["Application"])
+      print('python run_spr_%s_legacy.py %s %s %s %s %s %s %s %s &' % (j["Application"],j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],j["Entry_ID"], j["summarylog"], j["initII"], j["maxIterTime"]))
+    #if True:
+      os.system('python run_spr_%s_legacy.py %s %s %s %s %s %s %s %s &' % (j["Application"],j["arch_desc"],j["maxiter"],j["skip"],j["oslimit"],j["Entry_ID"], j["summarylog"], j["initII"], j["maxIterTime"]))
