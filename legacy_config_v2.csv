@@ -28,7 +28,7 @@ Entry_ID,Application,arch_desc,maxiter,initII,skip,oslimit,summarylog,maxIterTim
 201,gemm,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,7,NO,0,legacy_3333841_results.csv,6
 10211,aes_encrypt_2,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,20,NO,0,legacy_3333841_results.csv,6
 10311,idctCols_2,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,13,NO,0,legacy_3333841_results.csv,6
-10511,Conv2D_2,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,legacy_3333841_results.csv,6
+10511,conv2D_2,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,legacy_3333841_results.csv,6
 10611,matched_filter_2,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,3,NO,0,legacy_3333841_results.csv,6
 10711,matrix_multiply_2,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,5,NO,0,legacy_3333841_results.csv,6
 11011,fir_2,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,legacy_3333841_results.csv,6
