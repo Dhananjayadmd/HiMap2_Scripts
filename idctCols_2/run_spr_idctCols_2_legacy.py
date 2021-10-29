@@ -23,17 +23,17 @@ def main(arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summar
 
   #HIMAP2_HOME = os.getenv('HIMAP2_HOME')
   DFG_GEN_HOME = HIMAP2_HOME + '/Morpher_DFG_Generator'
-  DFG_CLUSTRNG_HOME = HIMAP2_HOME + '/HiMap2_Scikit_Clustering'
+  DFG_CLUSTRNG_HOME = HIMAP2_HOME + '/HiMap2_Cluster_Mapping'
   MAPPER_HOME = HIMAP2_HOME + '/Morpher_CGRA_Mapper'
   #SIMULATOR_HOME = HIMAP2_HOME + '/hycube_simulator'
   
   today = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M")
-  dir_name = 'Legacy_Entry_%s_Datetime_%s/' % (entry_id,today)
+  dir_name = 'SPR_Legacy_Entry_%s_Datetime_%s/' % (entry_id,today)
   #sum_log_name = '_legacy_entry_%s_Datetime_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s' % (entry_id,today)
 
   DFG_GEN_KERNEL = DFG_GEN_HOME + '/applications/picojpeg/'
   #DFG_CLUSTRNG_KERNEL = DFG_CLUSTRNG_HOME + '/applications/edn/' + dir_name
-  MAPPER_KERNEL = MAPPER_HOME + '/applications/clustered_arch/picojpeg_idct_rows/'+ dir_name
+  MAPPER_KERNEL = MAPPER_HOME + '/applications/clustered_arch/picojpeg_idct_cols/'+ dir_name
   #EXECTIME_SUMMARY = HIMAP2_HOME + '/HiMap2_Scripts/exec_time/picojpeg/' 
   #SIMULATOR_KERNEL =SIMULATOR_HOME + '/applications/'
 
@@ -62,10 +62,10 @@ def main(arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summar
   os.chdir(DFG_GEN_KERNEL)
 
   print('\nGenerating DFG\n')
-  #os.system('./run_pass.sh idctRows')
-  os.system('dot -Tpdf idctRows_INNERMOST_LN1_PartPredDFG.dot -o idctRows_INNERMOST_LN1_PartPredDFG.pdf')
+  #os.system('./run_pass.sh idctCols')
+  os.system('dot -Tpdf idctCols_INNERMOST_LN1_PartPredDFG.dot -o idctCols_INNERMOST_LN1_PartPredDFG.pdf')
   #os.system('cp jpegdct_POST_LN111_PartPred_DFG_forclustering.xml '+DFG_CLUSTRNG_KERNEL)
-  os.system('cp idctRows_unrolled_4_INNERMOST_LN1_PartPred_DFG_removed_falsedep.xml '+ MAPPER_KERNEL)
+  os.system('cp idctCols_unrolled_2_INNERMOST_LN1_PartPred_DFG_removed_falselsdep.xml '+ MAPPER_KERNEL)
 
 
 
@@ -79,9 +79,9 @@ def main(arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summar
   os.chdir(MAPPER_KERNEL)
   #start = time.time()
 
-  os.system(HIMAP2_HOME+'/Morpher_CGRA_Mapper/build_legacy/src/cgra_xml_mapper -m %s -d idctRows_unrolled_4_INNERMOST_LN1_PartPred_DFG_removed_falsedep.xml -j %s -s %s -l %s -u %s -a %s -i %s -w %s -v %s > log.txt &' % (maxIter,HIMAP2_HOME+'/Morpher_CGRA_Mapper/json_arch/clustered_archs/'+arch_desc, skip_inter_or_intra, open_set_limit,HIMAP2_HOME+'/HiMap2_Scripts/'+summary_log, entry_id,initII, maxIterTime, HIMAP2_HOME+'/HiMap2_Scripts/Logs/legacy_idctrows.log'))
-  #os.system('neato -Tpdf arch_allconnections.dot -o %s.pdf' % (arch_desc))
-  #os.system('neato -Tpdf arch_interclusterconnections.dot -o %s_interclusterconnections.pdf' % (arch_desc))
+  os.system(HIMAP2_HOME+'/Morpher_CGRA_Mapper/build_legacy_spr/src/cgra_xml_mapper -m %s -d idctCols_unrolled_2_INNERMOST_LN1_PartPred_DFG_removed_falselsdep.xml -j %s -s %s -l %s -u %s -a %s -i %s -w %s -v %s > log.txt &' % (maxIter,HIMAP2_HOME+'/Morpher_CGRA_Mapper/json_arch/clustered_archs/'+arch_desc, skip_inter_or_intra, open_set_limit,HIMAP2_HOME+'/HiMap2_Scripts/'+summary_log, entry_id,initII, maxIterTime, HIMAP2_HOME+'/HiMap2_Scripts/Logs/legacy_idctcols.log'))
+  os.system('neato -Tpdf arch_allconnections.dot -o %s.pdf' % (arch_desc))
+  os.system('neato -Tpdf arch_interclusterconnections.dot -o %s_interclusterconnections.pdf' % (arch_desc))
 
   #end = time.time() 
 

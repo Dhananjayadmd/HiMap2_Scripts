@@ -31,9 +31,9 @@ def main(no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c
   dir_name = 'Entry_%s_Datetime_%s/' % (entry_id,today)
   #sum_log_name = '_entry_%s_Datetime_%s_clusters_%s_Init_%s_C1_%s_C2_%s_r_%s_c_%s_arch_%s_maxIter_%s_skip_%s_oslimit_%s' % (entry_id,today)
 
-  DFG_GEN_KERNEL = DFG_GEN_HOME + '/applications/picojpeg/'
-  DFG_CLUSTRNG_KERNEL = DFG_CLUSTRNG_HOME + '/applications/picojpeg_idct_rows/' + dir_name
-  MAPPER_KERNEL = MAPPER_HOME + '/applications/clustered_arch/picojpeg_idct_rows/'+ dir_name
+  DFG_GEN_KERNEL = DFG_GEN_HOME + '/applications/matched_filter/'
+  DFG_CLUSTRNG_KERNEL = DFG_CLUSTRNG_HOME + '/applications/matched_filter/' + dir_name
+  MAPPER_KERNEL = MAPPER_HOME + '/applications/clustered_arch/matched_filter/'+ dir_name
   #EXECTIME_SUMMARY = HIMAP2_HOME + '/HiMap2_Scripts/exec_time/edn/' 
   #SIMULATOR_KERNEL =SIMULATOR_HOME + '/applications/'
 
@@ -62,15 +62,15 @@ def main(no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c
   os.chdir(DFG_GEN_KERNEL)
 
   print('\nGenerating DFG\n')
-  #os.system('./run_pass.sh idctRows')
-  #os.system('dot -Tpdf idctRows_INNERMOST_LN1_PartPredDFG.dot -o idctRows_INNERMOST_LN1_PartPredDFG.pdf')
-  os.system('cp idctRows_unrolled_4_INNERMOST_LN1_PartPred_DFG_forclustering_removed_falsedep.xml '+DFG_CLUSTRNG_KERNEL)
-  os.system('cp idctRows_unrolled_4_INNERMOST_LN1_PartPred_DFG_removed_falsedep.xml '+ MAPPER_KERNEL)
+  #os.system('./run_pass.sh corrFilter_1')
+  #os.system('dot -Tpdf corrFilter_1_INNERMOST_LN1_PartPredDFG.dot -o corrFilter_1_INNERMOST_LN1_PartPredDFG.pdf')
+  os.system('cp corrFilter_1_unrolled_INNERMOST_LN1_PartPred_DFG_forclustering.xml '+DFG_CLUSTRNG_KERNEL)
+  os.system('cp corrFilter_1_unrolled_INNERMOST_LN1_PartPred_DFG.xml '+ MAPPER_KERNEL)
 
   print('\nRunning DFG Clustering\n')
   os.chdir(DFG_CLUSTRNG_KERNEL)
-  os.system('python ../../../dfg_clustering.py idctRows_unrolled_4_INNERMOST_LN1_PartPred_DFG_forclustering_removed_falsedep.xml %s %s %s %s > log1.txt' % (no_clusters, ('precomputed'), no_init, cgra_cluster_r))
-  os.system('dot -Tpdf inter_cluster.dot -o inter_cluster_graph_idctRows_%s_%s.pdf' % (no_clusters, no_init))
+  os.system('python ../../../dfg_clustering.py corrFilter_1_unrolled_INNERMOST_LN1_PartPred_DFG_forclustering.xml %s %s %s %s > log1.txt' % (no_clusters, ('precomputed'), no_init, cgra_cluster_r))
+  os.system('dot -Tpdf inter_cluster.dot -o inter_cluster_graph_matched_filter_%s_%s.pdf' % (no_clusters, no_init))
   os.system('cp clustered.png clustered_%s_%s.png' % (no_clusters, no_init))
 	
   os.system('cp clustering_outcome.txt '+ MAPPER_KERNEL)
@@ -89,7 +89,7 @@ def main(no_clusters, no_init,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c
   os.chdir(MAPPER_KERNEL)
   start = time.time()
 
-  os.system(HIMAP2_HOME+'/Morpher_CGRA_Mapper/build_hierarchical/src/cgra_xml_mapper -m %s -d idctRows_unrolled_4_INNERMOST_LN1_PartPred_DFG_removed_falsedep.xml -j %s -s %s -l %s -u %s -a %s -i %s -w %s -v %s > log.txt &' % (maxIter,HIMAP2_HOME+'/Morpher_CGRA_Mapper/json_arch/clustered_archs/'+arch_desc, skip_inter_or_intra, open_set_limit,HIMAP2_HOME+'/HiMap2_Scripts/'+summary_log, entry_id, initII, maxIterTime, HIMAP2_HOME+'/HiMap2_Scripts/Logs/himap2_idctrows.log'))
+  os.system(HIMAP2_HOME+'/Morpher_CGRA_Mapper/build_hierarchical/src/cgra_xml_mapper -m %s -d corrFilter_1_unrolled_INNERMOST_LN1_PartPred_DFG.xml -j %s -s %s -l %s -u %s -a %s -i %s -w %s -v %s > log.txt &' % (maxIter,HIMAP2_HOME+'/Morpher_CGRA_Mapper/json_arch/clustered_archs/'+arch_desc, skip_inter_or_intra, open_set_limit,HIMAP2_HOME+'/HiMap2_Scripts/'+summary_log, entry_id, initII, maxIterTime, HIMAP2_HOME+'/HiMap2_Scripts/Logs/himap2_matched_filter.log'))
   os.system('neato -Tpdf arch_allconnections.dot -o %s.pdf' % (arch_desc))
   os.system('neato -Tpdf arch_interclusterconnections.dot -o %s_interclusterconnections.pdf' % (arch_desc))
 
