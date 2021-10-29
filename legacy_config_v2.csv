@@ -23,4 +23,4 @@ Entry_ID,Application,arch_desc,maxiter,initII,skip,oslimit,summarylog,maxIterTim
 125,conv2D,stdnoc_5x5tiles_5x5PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Legacy_5555841_results.csv,12
 127,matrix_multiply_2,stdnoc_5x5tiles_5x5PEs_8REGS_4PORTS_NW1.json,30,5,NO,0,Legacy_5555841_results.csv,12
 130,fir_2,stdnoc_5x5tiles_5x5PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Legacy_5555841_results.csv,12
-1011,edn_2,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,0,NO,0,legacy_3333841_results.csv,6
+10111,edn_2,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,0,NO,0,legacy_3333841_results.csv,6
