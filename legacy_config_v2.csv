@@ -38,3 +38,6 @@ Entry_ID,Application,arch_desc,maxiter,initII,skip,oslimit,summarylog,maxIterTim
 416,matched_filter_2,stdnoc_4x4tiles_4x4PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Legacy_4444841_results.csv,12
 417,matrix_multiply_2,stdnoc_4x4tiles_4x4PEs_8REGS_4PORTS_NW1.json,30,5,NO,0,Legacy_4444841_results.csv,12
 420,fir_2,stdnoc_4x4tiles_4x4PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Legacy_4444841_results.csv,12
+501,jpegidct,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,legacy_3333841_results.csv,6
+502,jpegidct_2,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,legacy_3333841_results.csv,6
+503,jpegidct_2,stdnoc_4x4tiles_4x4PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Legacy_4444841_results.csv,12
