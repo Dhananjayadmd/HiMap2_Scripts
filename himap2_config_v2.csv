@@ -153,5 +153,5 @@ Entry_ID,Application,N,init,C1,C2,r,c,arch_desc,maxiter,initII,skip,oslimit,summ
 4202,fir_2,13,100,2,2,4,4,stdnoc_4x4tiles_4x4PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Himap2_4444841_results.csv,12
 4203,fir_2,16,100,4,2,4,4,stdnoc_4x4tiles_4x4PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Himap2_4444841_results.csv,12
 501,jpegfdct,15,100,2,2,3,3,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,0,NO,0,Himap2_3333841_results.csv,6
-502,jpegfdct_2,16,100,2,2,3,3,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,0,NO,0,Himap2_3333841_results.csv,6
-503,jpegfdct_2,16,100,2,2,4,4,stdnoc_4x4tiles_4x4PEs_8REGS_4PORTS_NW1.json,30,0,NO,0,Himap2_4444841_results.csv,6
+502,jpegfdct_2,16,100,3,3,3,3,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,0,NO,0,Himap2_3333841_results.csv,6
+503,jpegfdct_2,16,100,3,3,4,4,stdnoc_4x4tiles_4x4PEs_8REGS_4PORTS_NW1.json,30,0,NO,0,Himap2_4444841_results.csv,6
