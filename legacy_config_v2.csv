@@ -45,3 +45,4 @@ Entry_ID,Application,arch_desc,maxiter,initII,skip,oslimit,summarylog,maxIterTim
 602,jpegidctfst_2,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,legacy_3333841_results.csv,6
 603,jpegidctfst_2,stdnoc_4x4tiles_4x4PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Legacy_4444841_results.csv,12
 701,invertmat,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,3,NO,0,legacy_3333841_results.csv,6
+703,invertmat,stdnoc_4x4tiles_4x4PEs_8REGS_4PORTS_NW1.json,30,3,NO,0,Legacy_4444841_results.csv,12
