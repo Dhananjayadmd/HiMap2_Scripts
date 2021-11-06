@@ -52,3 +52,8 @@ Entry_ID,Application,arch_desc,maxiter,initII,skip,oslimit,summarylog,maxIterTim
 4132,idctCols_2,stdnoc_4x4tiles_4x4PEs_8REGS_4PORTS_NW1.json,30,15,NO,0,Legacy_4444841_results.csv,12
 4171,matrix_multiply_2,stdnoc_4x4tiles_4x4PEs_8REGS_4PORTS_NW1.json,30,9,NO,0,Legacy_4444841_results.csv,12
 4172,matrix_multiply_2,stdnoc_4x4tiles_4x4PEs_8REGS_4PORTS_NW1.json,30,10,NO,0,Legacy_4444841_results.csv,12
+801,edn_2,stdnoc_5x5tiles_5x5PEs_8REGS_4PORTS_NW1.json,30,3,NO,0,Legacy_5555841_results.csv,12
+802,conv2D,stdnoc_5x5tiles_5x5PEs_8REGS_4PORTS_NW1.json,30,5,NO,0,Legacy_5555841_results.csv,12
+803,matrix_multiply_2,stdnoc_5x5tiles_5x5PEs_8REGS_4PORTS_NW1.json,30,6,NO,0,Legacy_5555841_results.csv,12
+804,jpegfdct_3,stdnoc_5x5tiles_5x5PEs_8REGS_4PORTS_NW1.json,30,5,NO,0,Legacy_5555841_results.csv,12
+805,invertmat_3,stdnoc_5x5tiles_5x5PEs_8REGS_4PORTS_NW1.json,30,5,NO,0,Legacy_5555841_results.csv,12
