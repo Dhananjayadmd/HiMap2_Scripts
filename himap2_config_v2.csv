@@ -174,3 +174,6 @@ Entry_ID,Application,N,init,C1,C2,r,c,arch_desc,maxiter,initII,skip,oslimit,summ
 803,matrix_multiply_2,30,100,5,5,5,5,stdnoc_5x5tiles_5x5PEs_8REGS_4PORTS_NW1.json,30,5,NO,0,Himap2_5555841_results.csv,12
 804,jpegfdct_3,30,100,3,3,5,5,stdnoc_5x5tiles_5x5PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Himap2_5555841_results.csv,12
 805,invertmat_3,27,100,5,5,5,5,stdnoc_5x5tiles_5x5PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Himap2_5555841_results.csv,12
+10512,conv2D_2,12,100,3,2,3,3,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Himap2_3333841_results.csv,6
+1012,edn,9,100,2,2,3,3,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,0,NO,0,Himap2_3333841_results.csv,6
+1095,kmeans,11,100,2,2,3,3,stdnoc_3x3tiles_3x3PEs_8REGS_4PORTS_NW1.json,30,4,NO,0,Himap2_3333841_results.csv,6
